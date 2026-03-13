@@ -1,4 +1,8 @@
 (function() {
+    if (L.Marker.prototype._rotatedMarkerPatched) {
+        return;
+    }
+    L.Marker.prototype._rotatedMarkerPatched = true;
     // save these original methods before they are overwritten
     var proto_initIcon = L.Marker.prototype._initIcon;
     var proto_setPos = L.Marker.prototype._setPos;
@@ -55,3 +59,4 @@
         }
     });
 })();
+
